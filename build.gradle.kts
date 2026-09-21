@@ -20,3 +20,9 @@ kotlin {
 tasks.test {
     useJUnitPlatform()
 }
+tasks.withType<JavaExec>().configureEach {
+    jvmArgs(
+        "-Dstdout.encoding=UTF-8",
+        "-Dstderr.encoding=UTF-8"
+    )
+}
